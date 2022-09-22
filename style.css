@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(210, 42, 42);
+}
+
+div{
+    background-color: rgba(6, 6, 27, 0.499);
+    
+    /* border: 1px solid rgba(255, 255, 255, 0.478) !important; */
+    box-shadow: 0 0 1px 1px rgba(125, 126, 133, 0.352);
+
+}
