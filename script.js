@@ -34,7 +34,7 @@ var questionBank = [
 ]
 var question = document.getElementById('question');
 var quizContainer = document.getElementById('quiz-container');
-var Scorecard = document.getElementById('scorecard');
+var scorecard = document.getElementById('scoreboard');
 var option0 = document.getElementById('option0');
 var option1 = document.getElementById('option1');
 var option2 = document.getElementById('option2');
@@ -47,8 +47,8 @@ var score = 0;
 
 
 function displayQuestion() {
-    for (var a = 0; a < span.lenght; a++) {
-        span[a].style.backgrond = 'none'
+    for (var a = 0; a < span.length; a++) {
+        span[a].style.backgrond = 'none'; 
     }
     question.innerHTML = 'Q.' + (i + 1) + '' + questionBank[i].question
     option0.innerHTML = questionBank[i].option[0];
@@ -60,26 +60,29 @@ function displayQuestion() {
 //function to calculaate scores
 
 function calScore(e) {
-    if (e.innerHTML === questionBank[i].answer && score < questionBank.lenght) {
+    if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
         score= score+1;
-        document.getElementById(e.Id).style.background='limegreen';
+        document.getElementById(e.Id)
+        // .style.background='limegreen';
     }
     else{
-        document.getElementById(e.Id).style.background='tomato';
+        document.getElementById(e.Id)
+        // .style.background='tomato';
     }
     setTimeout(nextQuestion, 300 );
 }
 
 // function to display next question
 function nextQuestion(){
-    if (i<questionBank.lenght-1){
+    if (i<questionBank.length-1){
         i=i+1;
         displayQuestion();
     }
     else{
         points.innerHTML=score+'/'+
         questionBank.length;
-        quizContainer.style.display= 'block'
+        quizContainer.style .display= 'none';
+        scoreboard.style.display= 'block'
     }
 }
 // click events to the next button
@@ -98,11 +101,11 @@ function checkAnswer(){
     var answeBank = document.getElementById('answerBank');
     var answers= document.getElementById('answers');
     answeBank.style.display ='block';
-    scoreCard.style.display ='block';
+    scoreboard.style.display ='none';
     for(var a =0; a<questionBank.length; a++){
         var list= document.createElement('li');
         list.innerHTML=questionBank[a].answer;
-        anwer 
+        answers.appendChild(list);
     }
 }
 
