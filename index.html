@@ -7,53 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
-<body>
+<body onload="playSong()">
     <div class="container mt-5">
         <div class="row  py-2">
-            <div class="col-7 mx-auto p-4 ">
-                <h1 class="bg-info">WELCOME TO</h1>
-                <div class=" text-info">WHO WANTS TO BE A MILLIONAIRE</div>
-
-                <div id="quiz-container">
-                    <div class="questions">
-                        <h2 id="question" style="color:white
-                         ;"></h2>
-                        <ol class="d-flex bg-white opacity=25 flex-column" type="A">
-                            <li class="option" onclick="calScore(this)" id="option0"></li>
-                            <li class="option" onclick="calScore(this)" id="option1"></li>
-                            <li class="option" onclick="calScore(this)" id="option2"></li>
-                            <li class="option" onclick="calScore(this)" id="option3"></li>
-                        </ol>
-                        <h4 id="stat"></h4>
-                    </div>
-
-                    <div class="buttons">
-                        <button type="button" class="next">Next</button>
+            <div class="col-7 mx-auto p-4 row ">
+                <div
+                    class="col-lg-7 col-md-7 col-sm-12 col-12 d-flex flex-column justify-content-center my-2 my-lg-0 my-md-0">
+                    <h1 class=" text-center py-3 d-flex justify-content-center">WELCOME TO</h1>
+                    <div class=" text text-center py-3 d-flex justify-content-center my-2">WHO WANTS TO BE A MILLIONAIRE
                     </div>
                 </div>
-                <div id="scoreboard"><img src="" alt="">
-                    <h3 id="score-title">your Score</h3>
+                <div class="image col-lg-5 col-md-5 col-sm-12 col-12 d-flex align-items-center"> <img
+                        src="./extras/favicon.png" width="100%" alt=""></div>
+
+
+                <div class="play text-light text-lg-start text-center">
+                    click <div class="btn btn-outline-light" onclick="press()">here</div> to play
                 </div>
-                <h2 id="score"></h2>
-                <button type="button" id="score-btn" onclick="backToQuiz() ">Back to quiz</button>
-                <button id="check-answer" onclick="checkAnswer()" type="button">check Answers</button>
             </div>
-        </div>
-
-        <div id="answerBank">
-            <h2>Answer :</h2>
-            <ol type="1" id="answers">
-
-            </ol>
-            <button type="button" id="score-btn" onclick="backToQuiz()">Back to quiz</button>
-
 
         </div>
     </div>
-   
+
+    <script>
+
+        // let song = new Audio("./extras/soundb.mp3")
+        const playSong = () => {
+            song.play()
+        }
+
+        const press = () => {
+            window.location = "gamePlay.html"
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 

@@ -77,14 +77,17 @@ function nextQuestion(){
     if (i<questionBank.length-1){
         i=i+1;
         displayQuestion();
+        checkAnswer.innerHTML= "er"
     }
     else{
         points.innerHTML=score+'/'+
         questionBank.length;
         quizContainer.style .display= 'none';
         scoreboard.style.display= 'block'
+
     }
 }
+
 // click events to the next button
 next.addEventListener('click', nextQuestion);
 
@@ -92,7 +95,7 @@ next.addEventListener('click', nextQuestion);
 // back to quiz button event
 
 function backToQuiz(){
-    location.reload();
+    location.href = "index.html";
 }
 
 // function to check answers
