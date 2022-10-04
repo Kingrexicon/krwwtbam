@@ -1,11 +1,15 @@
 body{
-    background-image: url(./extras/video-bg.jpg);
+    background-image: url(./extras/game-background.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
 }
 
 .container{
     background-color: rgba(212, 212, 215, 0.24);
+    backdrop-filter:;
     
     /* border: 1px solid rgba(255, 255, 255, 0.478) !important; */
     box-shadow: 0 0 1px 1px rgba(43,0,53);
@@ -17,7 +21,7 @@ body{
 
 div{
     box-shadow: 0 0 1px 1px rgba(43, 0, 53, 0.597);
-    background-color: rgba(21, 21, 22, 0.07);
+    background-color: rgba(3, 3, 21, 0.581);
 
 
     /* border: 1px solid rgba(43,0,53) !important; */
