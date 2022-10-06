@@ -1,5 +1,10 @@
 var questionBank = [
     {
+        question: ' What term is often used for a person who brings embarrassent or shame to their family ',
+        option: ['black sheep', 'white horse', 'brown goat', ' animal'],
+        answer: 'black sheep'
+    },
+    {
         question: 'pick  the odd one out',
         option: ['me', 'you', 'she', 'he'],
         answer: 'you'
@@ -28,12 +33,18 @@ var questionBank = [
     {
         question: '"who is your daddy", which nollywood movie has that phrase',
         option: ['chief daddy', 'cook daddy', 'king daddy', 'police daddy'],
-        answer: ''
+        answer: 'chief daddy'
     },
 
 ]
-var question = document.getElementById('question');
-var quizContainer = document.getElementById('quiz-container');
+
+   
+   let remove = new Audio("./extras/50-50_sound.mp3")
+   let PhoneS = new Audio("./extras/soundb.mp3")
+   
+   
+   var question = document.getElementById('question');
+   var quizContainer = document.getElementById('quiz-container');
 var scorecard = document.getElementById('scoreboard');
 var option0 = document.getElementById('option0');
 var option1 = document.getElementById('option1');
@@ -50,24 +61,40 @@ function displayQuestion() {
     for (var a = 0; a < span.length; a++) {
         span[a].style.backgrond = 'none'; 
     }
-    question.innerHTML = 'Q.' + (i + 1) + '' + questionBank[i].question
-    option0.innerHTML = questionBank[i].option[0];
-    option1.innerHTML = questionBank[i].option[1];
-    option2.innerHTML = questionBank[i].option[2];
-    option3.innerHTML = questionBank[i].option[3];
+    question.innerHTML = ` <p class="text-center">Q.${i + 1}</p> <div class="quest">${questionBank[i].question}</div> `
+    option0.innerHTML =  ` <div class="choose"> ${questionBank[i].option[0]}</div>`;
+    option1.innerHTML = `<div class="choose">${questionBank[i].option[1]}</div>`;
+    option2.innerHTML = `<div class="choose">${questionBank[i].option[2]}</div>`;
+    option3.innerHTML = `<div class="choose">${questionBank[i].option[3]}</div>`;
     statusbar.innerHTML = "Question" + '' + (i + 1) + '' + 'of' + '' + questionBank.length
 }
 //function to calculaate scores
+function removeOptions(){
+    remove.play()
+    option3.innerHTML = `<div class="choose"></div>`;
+    option2.innerHTML = `<div class="choose"></div>`;
+    fifty.innerHTML = ` <img src="./extras/50-50-used.png" alt="">`
+}
+
+
+function callFriend(){
+    // <a href="tel:"></a>
+    window.location.href= "tel:"
+    phone.innerHTML = ` <img src="./extras/phone-a-friend-used.png" alt="">`
+
+}
 
 function calScore(e) {
     if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
         score= score+1;
-        document.getElementById(e.Id)
-        // .style.background='limegreen';
+        document.getElementById(e.Id);
+        e.innerHTML=  `<div width="50px height="50px" style="background-color:green;">work</div>`
+        
     }
     else{
         document.getElementById(e.Id)
-        // .style.background='tomato';
+        e.innerHTML=  `<div width="50px height="50px" style="background-color:red;">work</div>`
+        
     }
     setTimeout(nextQuestion, 300 );
 }
@@ -105,10 +132,15 @@ function checkAnswer(){
     var answers= document.getElementById('answers');
     answeBank.style.display ='block';
     scoreboard.style.display ='none';
-    for(var a =0; a<questionBank.length; a++){
-        var list= document.createElement('li');
-        list.innerHTML=questionBank[a].answer;
-        answers.appendChild(list);
+    if(score < questionBank.length){
+
+        list.innerHTML=`e no work`
+    }else{
+        for(var a =0; a<questionBank.length; a++){
+            var list= document.createElement('li');
+            list.innerHTML=questionBank[a].answer;
+            answers.appendChild(list);
+        }
     }
 }
 

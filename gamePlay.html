@@ -8,19 +8,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="game.css">
-    
+
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="row  py-2">
-            <div class="col-7 mx-auto p-4 ">
+    <div class="scrol row col-12 mt-4">
+        <marquee class="fw-bold" behavior="" direction=""> WELCOME TO THE HOT SEAT</marquee>
+    </div>
+    <div class="container mt-5 col-12">
+        <div class="row  py-2" >
 
+            <div class="col-7 mx-auto d-flex ">
                 <div id="quiz-container">
                     <div class="questions">
                         <h2 id="question" style="color:white
                          ;"></h2>
-                        <ol class="d-flex bg-white opacity=25 flex-column" type="A">
+                        <ol class="d-flex  opacity=25 flex-column" type="A">
                             <li class="option" onclick="calScore(this)" id="option0"></li>
                             <li class="option" onclick="calScore(this)" id="option1"></li>
                             <li class="option" onclick="calScore(this)" id="option2"></li>
@@ -33,15 +36,22 @@
                         <button type="button" class="next">Next</button>
                     </div>
                 </div>
-                <div id="scoreboard"><img src="" alt="">
-                    <h3 id="score-title">your Score</h3>
-                </div>
-                <h2 id="score"></h2>
-                <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button>
-                <button id="checkAnswer" onclick="checkAnswer()" type="button">check Answers</button>
             </div>
-        </div>
+            <div class="extras d-flex flex-column ">
+                <div class="fifty" id="fifty" onclick="removeOptions()"> <img src="./extras/50-50.png" alt=""></div>
+                <div class="fifty" onclick="removeOptions()"> <img src="./extras/ask-the-audience.png" alt=""></div>
+                <div class="fifty" id="phone" onclick="callFriend()"> <img src="./extras/phone-a-friend.png" alt=""></div>
+                
+            </div>
+    class="bg-white"> call</a>
 
+            <div id="scoreboard"><img src="" alt="">
+                <h3 id="score-title">your Score</h3>
+            </div>
+            <h2 id="score"></h2>
+            <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button>
+            <button id="checkAnswer" onclick="checkAnswer()" type="button">check Answers</button>
+        </div>
         <div id="answerBank">
             <h2>Answer :</h2>
             <ol type="1" id="answers">
@@ -52,7 +62,7 @@
 
         </div>
     </div>
-   
+
     <script src="script.js"></script>
 </body>
 

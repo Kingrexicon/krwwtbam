@@ -1,14 +1,20 @@
 body{
     background-image: url(./extras/video-bg.jpg);
+    background-size: cover;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
 }
 
 .container{
     background-color: rgba(212, 212, 215, 0.24);
-    
+position: relative;
+top: 15px;
     /* border: 1px solid rgba(255, 255, 255, 0.478) !important; */
-    box-shadow: 0 0 1px 1px rgba(43,0,53);
+    box-shadow: 0 0 1px 1px rgb(243, 185, 255);
 
 }
 
@@ -51,4 +57,8 @@ img{
     animation-duration: 20s;
     animation-iteration-count: infinite;
 
+}
+
+@media all and (){
+    
 }

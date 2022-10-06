@@ -1,58 +1,76 @@
-body{
+body {
     background-image: url(./extras/game-background.jpg);
     width: 100%;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+}
+
+
+.scrol {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin:auto;
+    width: 50%;
+    border-top: solid 1px rgb(189, 132, 28);
+    border-bottom: solid 1px rgb(189, 132, 28);
+}
+
+marquee {
+    color: white;
+   
+    outline-width: 4px;
+    /* background-color: rgb(125,66,22); */
+}
+.container {
+    background-color: rgba(10, 10, 122, 0.761);
+    /* backdrop-filter:; */
+    margin-top: -50px;
+    backdrop-filter: brightness(01);
+
+    /* border: 1px solid rgba(255, 255, 255, 0.478) !important; */
+    box-shadow: 0 0 1px 1px rgba(43, 0, 53);
+
+}
+
+.extras{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.fifty{
+    height: 30%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.container{
-    background-color: rgba(212, 212, 215, 0.24);
-    backdrop-filter:;
-    
-    /* border: 1px solid rgba(255, 255, 255, 0.478) !important; */
-    box-shadow: 0 0 1px 1px rgba(43,0,53);
-
-}
 
 /* @media all and (max-width:500px) */
 
 
-div{
+div {
     box-shadow: 0 0 1px 1px rgba(43, 0, 53, 0.597);
-    background-color: rgba(3, 3, 21, 0.581);
+    /* background-color: rgba(3, 3, 21, 0.581); */
 
 
     /* border: 1px solid rgba(43,0,53) !important; */
 }
+.quest{
+    color:green
+}
+.option{
+    color: aqua;
+}
+.choose{
+    color: red;
+}
 
-h1{
+h1 {
     color: antiquewhite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.text{
-    color:rgb(43, 0, 53) ;
-}
 
-.btn{
-border: 1px solid rgb(43, 0, 53);
-}
-.btn:hover{
-    background-color: rgb(43, 0, 53, 0.597);
-}
-@keyframes roll {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-
-    }
-}
-img{
-    animation-name: roll;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-
+.text {
+    color: rgb(43, 0, 53);
+    background-color: red;
 }
