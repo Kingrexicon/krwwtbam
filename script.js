@@ -124,7 +124,7 @@ function removeOptions() {
 
     }
 }
-const playSong = () => {
+const playSng = () => {
     PhoneS.play()
 }
 var enable = true
