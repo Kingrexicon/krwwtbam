@@ -41,6 +41,7 @@ var questionBank = [
    
    let remove = new Audio("./extras/50-50_sound.mp3")
    let PhoneS = new Audio("./extras/soundb.mp3")
+   let audiE  = new Audio("./extras/Ask The Audience_sound.mp3")
    
    
    var question = document.getElementById('question');
@@ -57,46 +58,72 @@ var i = 0;
 var score = 0;
 
 
-function displayQuestion() {
-    for (var a = 0; a < span.length; a++) {
-        span[a].style.backgrond = 'none'; 
-    }
-    question.innerHTML = ` <p class="text-center">Q.${i + 1}</p> <div class="quest">${questionBank[i].question}</div> `
-    option0.innerHTML =  ` <div class="choose"> ${questionBank[i].option[0]}</div>`;
-    option1.innerHTML = `<div class="choose">${questionBank[i].option[1]}</div>`;
-    option2.innerHTML = `<div class="choose">${questionBank[i].option[2]}</div>`;
-    option3.innerHTML = `<div class="choose">${questionBank[i].option[3]}</div>`;
-    statusbar.innerHTML = "Question" + '' + (i + 1) + '' + 'of' + '' + questionBank.length
+// function displayQuestion() {
+//        for(var a=0; a<span.length;a++){
+    // span[a].style.background='none';
+// }
+//     question.innerHTML = ` <p class="text-center">Q.${i + 1}</p> <div class="quest">${questionBank[i].question}</div> `
+//     option0.innerHTML =  ` <div class="choose"> A. ${questionBank[i].option[0]}</div>`;
+//     option1.innerHTML = `<div class="choose">B. ${questionBank[i].option[1]}</div>`;
+//     option2.innerHTML = `<div class="choose">C. ${questionBank[i].option[2]}</div>`;
+//     option3.innerHTML = `<div class="choose">D. ${questionBank[i].option[3]}</div>`;
+//     statusbar.innerHTML = "Question" + '' + (i + 1) + '' + 'of' + '' + questionBank.length
+// }
+function displayQuestion(){
+    for(var a=0; a<span.length;a++){
+        span[a].style.background='none';
+}
+ question.innerHTML = ` <p class="text-center">Q.${i + 1}</p> <div class="quest">${questionBank[i].question}</div> `
+
+option0.innerHTML=questionBank[i].option[0];
+option1.innerHTML=questionBank[i].option[1];
+option2.innerHTML=questionBank[i].option[2];
+option3.innerHTML=questionBank[i].option[3];
+statusbar.innerHTML="question"+''+(i+1)+''+'of'+''+questionBank.length;
 }
 //function to calculaate scores
-function removeOptions(){
-    remove.play()
-    option3.innerHTML = `<div class="choose"></div>`;
-    option2.innerHTML = `<div class="choose"></div>`;
-    fifty.innerHTML = ` <img src="./extras/50-50-used.png" alt="">`
-}
-
-
-function callFriend(){
-    // <a href="tel:"></a>
-    window.location.href= "tel:"
-    phone.innerHTML = ` <img src="./extras/phone-a-friend-used.png" alt="">`
-
-}
-
 function calScore(e) {
     if (e.innerHTML === questionBank[i].answer && score < questionBank.length) {
         score= score+1;
         document.getElementById(e.Id);
-        e.innerHTML=  `<div width="50px height="50px" style="background-color:green;">work</div>`
+        e.innerHTML=  `<div width="50px height="50px" style="background-color:green">correct</div>`
         
     }
     else{
         document.getElementById(e.Id)
-        e.innerHTML=  `<div width="50px height="50px" style="background-color:red;">work</div>`
+        e.innerHTML=  `<div width="50px height="50px" style="background-color:red;">wrong</div>`
         
     }
     setTimeout(nextQuestion, 300 );
+}
+var enabled= true
+function removeOptions(){
+  if(enabled==true){  remove.play();
+    option3.innerHTML = `<div class="choose"></div>`;
+    option2.innerHTML = `<div class="choose"></div>`;
+    fifty.innerHTML = ` <img src="./extras/50-50-used.png" alt="">`;
+    enabled=false
+}else{
+setTimeout(() => {    
+    stat.innerHTML=`function already used`
+    setTimeout(() => {
+       stat.innerHTML=`` 
+    }, 2000);
+}, 300);   
+ 
+}}
+
+var enable= true
+function callFriend(){
+    if(enable==true){
+    audiE.play();
+    window.location.href= "tel:"
+    phone.innerHTML = ` <img src="./extras/phone-a-friend-used.png" alt="">`
+    enable=false
+}
+}
+function restartGame(){cdxc
+    location.reload()
 }
 
 // function to display next question
@@ -132,16 +159,13 @@ function checkAnswer(){
     var answers= document.getElementById('answers');
     answeBank.style.display ='block';
     scoreboard.style.display ='none';
-    if(score < questionBank.length){
-
-        list.innerHTML=`e no work`
-    }else{
+    
         for(var a =0; a<questionBank.length; a++){
             var list= document.createElement('li');
             list.innerHTML=questionBank[a].answer;
             answers.appendChild(list);
         }
-    }
+
 }
 
 displayQuestion();

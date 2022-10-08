@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,17 +20,16 @@
         <div class="row  py-2" >
 
             <div class="col-7 mx-auto d-flex ">
-                <div id="quiz-container">
+                <div id="quiz-container" class="col-12">
                     <div class="questions">
-                        <h2 id="question" style="color:white
-                         ;"></h2>
-                        <ol class="d-flex  opacity=25 flex-column" type="A">
-                            <li class="option" onclick="calScore(this)" id="option0"></li>
-                            <li class="option" onclick="calScore(this)" id="option1"></li>
-                            <li class="option" onclick="calScore(this)" id="option2"></li>
-                            <li class="option" onclick="calScore(this)" id="option3"></li>
+                        <h2 id="question" style="color:white;"></h2>
+                        <ol class=" row  " type="A">
+                            <li class="option mb-3 col-6" onclick="calScore(this)" id="option0"></li>
+                            <li class="option mb-3 col-6" onclick="calScore(this)" id="option1"></li>
+                            <li class="option col-6" onclick="calScore(this)" id="option2"></li>
+                            <li class="option  col-6" onclick="calScore(this)" id="option3"></li>
                         </ol>
-                        <h4 id="stat"></h4>
+                        <h5 id="stat" class="text-warning"></h5>
                     </div>
 
                     <div class="buttons">
@@ -43,13 +43,11 @@
                 <div class="fifty" id="phone" onclick="callFriend()"> <img src="./extras/phone-a-friend.png" alt=""></div>
                 
             </div>
-    class="bg-white"> call</a>
-
             <div id="scoreboard"><img src="" alt="">
                 <h3 id="score-title">your Score</h3>
             </div>
             <h2 id="score"></h2>
-            <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button>
+            <!-- <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button -->
             <button id="checkAnswer" onclick="checkAnswer()" type="button">check Answers</button>
         </div>
         <div id="answerBank">
@@ -58,6 +56,7 @@
 
             </ol>
             <button type="button" id="score-btn" onclick="backToQuiz()">Back to Home</button>
+            <button type="button" id="score-btn" onclick="restartGame()">Play Again</button>
 
 
         </div>
