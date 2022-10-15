@@ -40,6 +40,7 @@ var questionBank = [
 
 
 let remove = new Audio("./extras/50-50_sound.mp3")
+let song = new Audio("./extras/soundb.mp3")
 let PhoneS = new Audio("./extras/soundb.mp3")
 let audiE = new Audio("./extras/Ask The Audience_sound.mp3")
 let correct = new Audio('./extras/sound_correct.mp3')
@@ -99,7 +100,12 @@ function calScore(e) {
 
         if (inCorrect.play()) { 
             setTimeout(() => {
-                restartGame() 
+      gameOver.innerHTML =  `<div class="game-end-cover "  > GAME OVER</div>`
+      points.innerHTML = score + '/' +
+      questionBank.length;
+  quizContainer.style.display = 'none';
+  scoreboard.style.display = 'block'
+        // window.location.href = "after.html" 
             }, 1000); 
         }
 
@@ -183,3 +189,10 @@ function checkAnswer() {
 }
 
 displayQuestion();
+
+
+
+
+const playSong = () => {
+    song.play()
+}
