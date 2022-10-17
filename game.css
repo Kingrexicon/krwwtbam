@@ -5,6 +5,7 @@ body {
     background-position: center;
     background-size: cover;
     min-height: 100vh;
+    /* padding: 100px 0; */
 }
 
 
@@ -12,13 +13,15 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: auto;
     width: 50%;
+    position: relative;
+    /* bottom:80px; */
     border-top: solid 1px rgb(189, 132, 28);
     border-bottom: solid 1px rgb(189, 132, 28);
 }
 
 marquee {
     color: white;
-    outline-width: 4px;
+    -webkit-text-stroke: rgba(248, 55, 2, 0.678) 4px ;
     /* background-color: rgb(125,66,22); */
 }
 
@@ -61,11 +64,11 @@ marquee {
 }
 #question{
     width: 100%;
-    font-size: 10px;
-    background-color: rgba(0, 128, 0, 0.352);
+    font-size: 2rem;
+    /* background-color: rgba(0, 128, 0, 0.352); */
     display: flex;
     color: gold;
-    background-image: radial-gradient(rgb(1,150,253),rgb(0,11,64) );
+    background-image: radial-gradient(rgba(1, 148, 253, 0.386),rgb(0,11,64) );
     flex-direction: column;
     align-items: center;
     border-radius: 60px;
@@ -76,16 +79,16 @@ marquee {
      max-height: 240px;
 }
 .quest {
-  width: 70%;
+  width: 100%;
   font-family: cursive;
   height: 60%;
   /* border: solid red 1px; */
 text-align: center;
-  font-size: 12px;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-    color: goldenrod;
+    color: gold
 }
 
 .optioncase{
@@ -101,6 +104,7 @@ background-color: red;
     border: groove 2px rgb(176,116,46);
     justify-content: center;
 text-align: center;
+font-size: 2rem;
 
     /* padding: 2px 4px; */
 }
@@ -125,16 +129,6 @@ h1 {
     border-right: 3px solid;
 }
 
-@media all and (max-width:460px) {
-    *{
-        
-    }
-.option {
-font-size: 57%;
-text-align: center;
-}
-
-}
 .game-end-cover{
     border:3px ridge red;
     width: 100%;
@@ -143,6 +137,7 @@ text-align: center;
     background-color:rgb(10, 10, 10);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 font-weight: 600;
@@ -168,3 +163,25 @@ animation-fill-mode:forwards ;
     }
 }
 
+
+    @media all and (max-width:460px) {
+    
+    
+    .option {
+    font-size: 57%;
+    text-align: center;
+    }
+    
+    .extras{
+        flex-direction: row !important;
+    }
+    #question{
+        font-size: 1rem;
+    }
+    .quest{
+        font-size: 0.7rem;
+    }
+    .scrol{
+        width: 95%;
+    }
+    }

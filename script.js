@@ -76,7 +76,7 @@ function displayQuestion() {
     for (var a = 0; a < span.length; a++) {
         span[a].style.background = 'none';
     }
-    question.innerHTML = ` <p class="text-center">Q.${i + 1}</p> <div class="quest">${questionBank[i].question}</div> `
+    question.innerHTML = ` <div class="quest">${questionBank[i].question}</div> `
 
     option0.innerHTML = questionBank[i].option[0];
     option1.innerHTML = questionBank[i].option[1];
@@ -100,7 +100,14 @@ function calScore(e) {
 
         if (inCorrect.play()) { 
             setTimeout(() => {
-      gameOver.innerHTML =  `<div class="game-end-cover "  > GAME OVER</div>`
+      gameOver.innerHTML =  `<div class="game-end-cover "  > GAME OVER
+       <button class="mt-2 mx-auto" type="button" id="score-btn" onclick="restartGame()">Play Again</button>
+       <div id="scoreboard"><img src="" alt="">
+       <h3 id="score-title">your Score</h3>
+     </div>
+     <h2 bg-white id="score"></h2>
+
+      </div>`
       points.innerHTML = score + '/' +
       questionBank.length;
   quizContainer.style.display = 'none';

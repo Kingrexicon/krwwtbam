@@ -1,68 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="game.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="game.css">
 
 </head>
 
 <body onload="playSng()">
-    <div class="scrol row col-12 mt-4">
-        <marquee class="fw-bold" behavior="" direction=""> WELCOME TO THE HOT SEAT</marquee>
-    </div>
-    <div class="container mt-5 col-12">
-        <div class="row  py-2" >
+  <div class="scrol row col-12 mt-4">
+    <marquee class="fw-bold" behavior="" direction=""> WELCOME TO THE HOT SEAT 🥵🤔</marquee>
+  </div>
+  <div class="container mt-5 col-12">
+    <div class="row  py-2">
 
-            <div class="col-7 mx-auto d-flex " id="gameOver">
-                <div id="quiz-container" class="col-12">
-                    <div class="questions">
-                        <h2 id="question" style="color:white;"></h2>
-                        <ol class=" row  " type="A">
-                            <li class="option mb-3 col-6" onclick="calScore(this)" id="option0"></li>
-                            <li class="option mb-3 col-6" onclick="calScore(this)" id="option1"></li>
-                            <li class="option col-6" onclick="calScore(this)" id="option2"></li>
-                            <li class="option  col-6" onclick="calScore(this)" id="option3"></li>
-                        </ol>
-                        <h5 id="stat" class="text-warning"></h5>
-                    </div>
-
-                    <div class="buttons">
-                        <button type="button" class="next">Next</button>
-                    </div>
-                </div>
-            </div>
-            <div class="extras d-flex flex-column ">
-                <div class="fifty" id="fifty" onclick="removeOptions()"> <img src="./extras/50-50.png" alt=""></div>
-                <div class="fifty" onclick="removeOptions()"> <img src="./extras/ask-the-audience.png" alt=""></div>
-                <div class="fifty" id="phone" onclick="callFriend()"> <img src="./extras/phone-a-friend.png" alt=""></div>
-                
-            </div>
-            <div id="scoreboard"><img src="" alt="">
-                <h3 id="score-title">your Score</h3>
-            </div>
-            <h2 id="score"></h2>
-            <!-- <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button -->
-            <button id="checkAnswer" onclick="checkAnswer()" type="button">check Answers</button>
-        </div>
-        <div id="answerBank">
-            <h2>Answer :</h2>
-            <ol type="1" id="answers">
-
+      <div class="col-12 col-sm=11 col-md-9 col-lg-7 mx-auto d-flex " id="gameOver">
+        <div id="quiz-container" class="col-12">
+          <div class="questions">
+            <h2 id="question"></h2>
+            <ol class=" row  " type="A">
+              <li class="option mb-3 col-6" onclick="calScore(this)" id="option0"></li>
+              <li class="option mb-3 col-6" onclick="calScore(this)" id="option1"></li>
+              <li class="option col-6" onclick="calScore(this)" id="option2"></li>
+              <li class="option  col-6" onclick="calScore(this)" id="option3"></li>
             </ol>
-            <button type="button" id="score-btn" onclick="backToQuiz()">Back to Home</button>
-            <button type="button" id="score-btn" onclick="restartGame()">Play Again</button>
+            <h5 id="stat" class="text-warning"></h5>
+          </div>
 
-
+          <div class="buttons">
+            <button type="button" class="next">Next</button>
+          </div>
         </div>
-    </div>
+      </div>
+      <div class="extras d-flex flex-column col-12 col-sm=11 col-md-9 col-lg-7  ">
+        <div class="fifty" id="fifty" onclick="removeOptions()"> <img src="./extras/50-50.png" alt=""></div>
+        <div class="fifty" onclick="removeOptions()"> <img src="./extras/ask-the-audience.png" alt=""></div>
+        <div class="fifty" id="phone" onclick="callFriend()"> <img src="./extras/phone-a-friend.png" alt=""></div>
 
-    <script src="script.js"></script>
+      </div>
+      <div id="scoreboard"><img src="" alt="">
+        <h3 id="score-title">your Score</h3>
+      </div>
+      <h2 id="score"></h2>
+      <!-- <button type="button" id="score-btn" onclick="backToQuiz() ">Back to Home</button -->
+      <button class="disabled" id="checkAnswer" onclick="checkAnswer()" type="button">check Answers</button>
+    </div>
+    <div id="answerBank">
+      <h2>Answer :</h2>
+      <ol type="1" id="answers">
+
+      </ol>
+      <button type="button" id="score-btn" onclick="backToQuiz()">Back to Home</button>
+      <button type="button" id="score-btn" onclick="restartGame()">Play Again</button>
+
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
