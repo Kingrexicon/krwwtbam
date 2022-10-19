@@ -41,7 +41,7 @@ var questionBank = [
 
 let remove = new Audio("./extras/50-50_sound.mp3")
 let song = new Audio("./extras/soundb.mp3")
-let PhoneS = new Audio("./extras/soundb.mp3")
+// let PhoneS = new Audio("./extras/soundb.mp3")
 let audiE = new Audio("./extras/Ask The Audience_sound.mp3")
 let correct = new Audio('./extras/sound_correct.mp3')
 let inCorrect = new Audio('./extras/sound_incorrect.mp3')
@@ -100,18 +100,17 @@ function calScore(e) {
 
         if (inCorrect.play()) { 
             setTimeout(() => {
+             
+            quizContainer.style.display = 'none';
+            scoreboard.style.display = 'block'
       gameOver.innerHTML =  `<div class="game-end-cover "  > GAME OVER
-       <button class="mt-2 mx-auto" type="button" id="score-btn" onclick="restartGame()">Play Again</button>
-       <div id="scoreboard"><img src="" alt="">
-       <h3 id="score-title">your Score</h3>
-     </div>
-     <h2 bg-white id="score"></h2>
+      <h3 id="score-title">you Scored</h3>
+      <h2 style="color:white;" id="score">${score}/${questionBank.length}points</h2>
+      <button class="mt-2 mx-auto" type="button" id="score-btn" onclick="restartGame()">Play Again</button>
+     
 
       </div>`
-      points.innerHTML = score + '/' +
-      questionBank.length;
-  quizContainer.style.display = 'none';
-  scoreboard.style.display = 'block'
+    
         // window.location.href = "after.html" 
             }, 1000); 
         }
